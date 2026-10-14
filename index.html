@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naren Muthuraj Latha | Technical Dossier</title>
+    <title>Naren Muthuraj Latha | Engineering Dossier</title>
     <style>
         :root {
-            --bg-color: #fafafa;
-            --text-primary: #171717;
-            --text-secondary: #525252;
-            --accent-color: #2563eb;
-            --card-bg: #ffffff;
-            --border-color: #e5e5e5;
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-hover: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+            --border-color: #334155;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
             color: var(--text-primary);
             line-height: 1.7;
             margin: 0;
@@ -24,17 +26,44 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Maintenance Notice */
+        .maintenance-notice {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--accent-blue);
+            padding: 16px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            max-width: 300px;
+            z-index: 1000;
+            font-size: 0.85rem;
+        }
+
+        .maintenance-notice strong {
+            display: block;
+            color: var(--accent-blue);
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
         header {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 6rem 2rem 4rem 2rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.75rem;
+            font-weight: 800;
             letter-spacing: -0.025em;
             margin: 0 0 0.5rem 0;
+            background: linear-gradient(to right, #38bdf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
@@ -45,66 +74,85 @@
         }
 
         .contact-links a {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             text-decoration: none;
             margin-right: 1.5rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            border-bottom: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             transition: all 0.2s ease;
         }
 
         .contact-links a:hover {
-            color: var(--text-primary);
-            border-bottom-color: var(--text-primary);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
         }
 
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 2rem 6rem 2rem;
+            padding: 4rem 2rem 6rem 2rem;
         }
 
         .project-section {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 3rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 3rem;
+            transition: transform 0.2s ease;
         }
 
-        .project-header {
-            margin-bottom: 2.5rem;
+        .project-section:hover {
+            border-color: #475569;
         }
 
         .project-title {
-            font-size: 1.875rem;
-            font-weight: 600;
-            margin: 0 0 1rem 0;
-            letter-spacing: -0.025em;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 1.25rem 0;
+            color: #ffffff;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .tag {
-            background-color: #f1f5f9;
-            color: #334155;
-            padding: 0.25rem 0.75rem;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 0.35rem 0.85rem;
             border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         h3 {
             font-size: 1.25rem;
             font-weight: 600;
             margin: 2.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            margin-right: 12px;
         }
 
         p {
@@ -128,7 +176,7 @@
             gap: 1.5rem;
             margin: 2rem 0;
             padding: 1.5rem;
-            background-color: #f8fafc;
+            background-color: rgba(15, 23, 42, 0.5);
             border-radius: 8px;
             border: 1px solid var(--border-color);
         }
@@ -139,48 +187,68 @@
         }
 
         .metric-label {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748b;
-            margin-bottom: 0.25rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
         }
 
         .metric-value {
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--accent-blue);
+        }
+
+        .code-block {
+            background-color: #020617;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #a5b4fc;
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
         }
 
         @media (max-width: 640px) {
             header, main { padding-left: 1.5rem; padding-right: 1.5rem; }
             .project-section { padding: 2rem 1.5rem; }
+            .maintenance-notice { bottom: 16px; right: 16px; left: 16px; max-width: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Dynamic Maintenance Notification for Academic Evaluators -->
+    <div class="maintenance-notice">
+        <strong>Notice to Academic Evaluators</strong>
+        This dossier is a lightweight, in-progress maintenance build. The fully realized technical portfolio with comprehensive CAD documentation is currently under construction and will be deployed shortly.
+    </div>
+
     <header>
         <h1>Naren Muthuraj Latha</h1>
         <p class="subtitle">Hybrid Mechanical-Design Engineer | MSc Design & Engineering, Politecnico di Milano</p>
         <div class="contact-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="mailto:email@example.com">Contact</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="mailto:email@example.com">Direct Contact</a>
         </div>
     </header>
 
     <main>
+        <!-- PROJECT 1 -->
         <article class="project-section">
             <div class="project-header">
-                <h2 class="project-title">Closed-Loop Electromechanical Exhaust Controller</h2>
+                <h2 class="project-title">Project 01: Closed-Loop Electromechanical Exhaust Controller</h2>
                 <div class="tags">
-                    <span class="tag">Embedded C++</span>
+                    <span class="tag">Embedded Systems</span>
                     <span class="tag">Mechatronics</span>
-                    <span class="tag">TIG Welding</span>
-                    <span class="tag">Signal Processing</span>
+                    <span class="tag">Control Logic</span>
+                    <span class="tag">Fabrication</span>
                 </div>
-                <p>Designed and developed a custom Arduino-based control system for an automotive electronic exhaust cut-off valve to maximize engine volumetric efficiency through a scavenging effect[cite: 1]. The objective was to retrofit intelligent push-button control onto an existing electrically actuated exhaust flap while preventing mechanical over-travel and jamming at the valve's physical end-stops[cite: 1].</p>
+                <p>Fabricated a switchable automotive exhaust bypass system to maximize volumetric efficiency, upcycling OEM steel piping via TIG welding for thermal endurance[cite: 4]. The core achievement was architecting an Arduino/L298 closed-loop system utilizing an ACS712 current sensor to intelligently detect mechanical stalls and cut motor power to prevent burnout[cite: 4].</p>
             </div>
 
             <div class="metrics-grid">
@@ -189,38 +257,70 @@
                     <span class="metric-value">Arduino Uno Rev 3</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-label">Motor Driver</span>
+                    <span class="metric-label">Power Delivery</span>
                     <span class="metric-value">L298 H-bridge (12V)</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-label">Sensor Integration</span>
-                    <span class="metric-value">ACS712 30A Hall-Effect</span>
+                    <span class="metric-label">Feedback Loop</span>
+                    <span class="metric-value">ACS712 Hall-Effect</span>
                 </div>
             </div>
 
-            <h3>Mechanical Architecture & Thermal Management</h3>
+            <h3>System Architecture & Signal Processing</h3>
             <ul>
-                <li>Upcycled OEM-grade steel piping from scrap Volkswagen Jetta exhaust manifolds, utilizing TIG welding to withstand severe thermal cycling and optimize the scavenging effect[cite: 1].</li>
-                <li>Mounted the 12V automotive exhaust flap motor with a calculated spatial offset to decouple it from direct thermal conduction from the extreme radiant heat of the exhaust manifold[cite: 1].</li>
-                <li>Weather-proofed the actuator's factory plastic gearbox housing using a heat-shrink overmolding technique to establish a hermetic seal against water ingress and highly abrasive road debris[cite: 1].</li>
+                <li>Replaced failure-prone mechanical limit switches by programming Exponential Moving Average (EMA) filtering and rate-of-change (dI/dt) logic in C++ to instantly cut motor power upon detecting the current spike of a mechanical stall at the valve's end-of-travel[cite: 4, 5].</li>
+                <li>Engineered a transient torque-boost startup sequence, injecting a full 255 PWM pulse for exactly 165 ms to shatter static friction before settling to a 240 PWM operating baseline[cite: 3].</li>
+                <li>Hardcoded a 50 ms software debounce delay to filter micro-millisecond signal bounces caused by the physical inconsistency of human button presses during operation[cite: 3].</li>
+            </ul>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-section">
+            <div class="project-header">
+                <h2 class="project-title">Project 02: Automotive LIN Bus Architecture Retrofit & Protocol Translation</h2>
+                <div class="tags">
+                    <span class="tag">Network Topology</span>
+                    <span class="tag">Reverse Engineering</span>
+                    <span class="tag">Firmware Architecture</span>
+                    <span class="tag">Signal Injection</span>
+                </div>
+                <p>Conducted an architectural feasibility study and protocol translation design to integrate an MQB-platform steering wheel onto a legacy VW Polo PQ25 (6R/6C) chassis[cite: 5, 13]. The objective was to intercept, translate, and inject cruise control LIN frames across mismatched network topologies to enable full functionality from an aftermarket hardware installation[cite: 5, 13].</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-label">Bus Architecture</span>
+                    <span class="metric-value">Dual-LIN Transceiver Emulator</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Microcontroller</span>
+                    <span class="metric-value">Arduino Pro Mini 5V</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Network Nodes</span>
+                    <span class="metric-value">TJA1021 / MCP2004</span>
+                </div>
+            </div>
+
+            <h3>The Interoperability Challenge</h3>
+            <p>The MQB steering wheel utilizes a fundamentally different LIN dialect and network topology compared to the PQ25 combination switch[cite: 13]. Direct hardware installation fails because the legacy PQ25 J527 steering column module cannot interpret modern MQB cruise control frames[cite: 13].</p>
+
+            <h3>Hardware Integration & System Logic</h3>
+            <ul>
+                <li><strong>Dual-Network Isolation:</strong> Designed a bridging architecture that separates the networks using two individual TJA1021 (or MCP2004 equivalent) LIN transceivers—one connected to the MQB steering wheel, and the other to the PQ25 J527 stalk[cite: 13].</li>
+                <li><strong>Data Sniffing & Translation:</strong> Programmed the Arduino Pro Mini to sniff the incoming MQB steering wheel LIN frames (specifically intercepting the SET, RES, +, –, and CANCEL commands)[cite: 13]. The logic then translates these specific packets into the older PQ25 stalk LIN format[cite: 13].</li>
+                <li><strong>Signal Injection:</strong> The translated frames are continuously injected into the PQ25 cruise control LIN cluster, tricking the legacy Body Control Module (BCM) into recognizing native hardware[cite: 13].</li>
+                <li><strong>Environmental Shielding:</strong> To operate reliably within a volatile automotive electrical environment, the design incorporates an automotive-grade 7805 linear regulator to step down the 12V ignition power to a stable, low-noise 5V supply, paired with optocoupler isolation to protect the microcontroller from voltage spikes[cite: 13].</li>
             </ul>
 
-            <h3>Advanced Control Strategy & Signal Processing</h3>
-            <ul>
-                <li>Transitioned from a fragile, fixed-duration motor activation sequence to an adaptive, current-feedback closed-loop control system that monitors mechanical load dynamically[cite: 1].</li>
-                <li>Implemented an Exponential Moving Average (EMA) filter with an optimized smoothing factor of &alpha; = 0.20 to prevent false stall detections from the inherently noisy analog signal of the ACS712 sensor[cite: 1].</li>
-                <li>Calculated the rate-of-change (dI/dt) of the filtered current over 20 ms intervals to detect the mechanical end-of-travel, instantly cutting power via the L298 driver when the current spikes rapidly (exceeding a calculated rate of 0.32)[cite: 1].</li>
-                <li>Masked the natural inductive spike of motor startup inrush current by implementing an ignoreSpikeTime variable that pauses rate-of-change detection for the first 250 ms of operation[cite: 1].</li>
-                <li>Programmed independent threshold tracking for opening and closing parameters to compensate for asymmetric aerodynamic and mechanical loads presented by the pressurized exhaust flow[cite: 1].</li>
-                <li>Engineered a transient torque-boost startup sequence, injecting a full 255 PWM pulse for exactly 165 ms to shatter static friction before dropping to a continuous 240 PWM operating baseline[cite: 1].</li>
-            </ul>
-
-            <h3>Human-Machine Interface (HMI)</h3>
-            <ul>
-                <li>Reverse-engineered a factory-spec Volkswagen dashboard dummy button operating on an active-low input (INPUT_PULLUP) to maintain an OEM cabin aesthetic[cite: 1].</li>
-                <li>Hardcoded a 50 ms software debounce delay into the system to filter micro-millisecond signal bounces caused by the physical inconsistency of human button presses[cite: 1].</li>
-                <li>Interpreted user commands using a state-toggling logic loop based on previous position memory stored directly in the Arduino[cite: 1].</li>
-            </ul>
+            <div class="code-block">
+                // System Block Diagram<br>
+                MQB Steering Wheel ── LIN Wire 1 ── [TJA1021 Transceiver #1] ── Arduino<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ Translation Logic<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                PQ25 J527 Stalk ─── LIN Wire 2 ── [TJA1021 Transceiver #2] ───┘<br>
+            </div>
         </article>
     </main>
 
